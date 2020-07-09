@@ -1,4 +1,6 @@
-class PopupForm extends Popup {
+import Popup from "./Popup";
+
+export default class PopupForm extends Popup {
   constructor(popup, closeButton, openButton, resetError, resetInput, setSubmitButtonState) {
     super(popup, closeButton);
     this.openButton = openButton;

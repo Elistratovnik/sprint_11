@@ -1,4 +1,4 @@
-class Spinner {
+export default class Spinner {
   constructor(spinnerContainer) {
     this.spinnerContainer = spinnerContainer;
   }

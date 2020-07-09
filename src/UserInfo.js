@@ -1,4 +1,4 @@
-class UserInfo {
+export default class UserInfo {
   constructor(nameContainer, aboutContainer, inputName, inputAbout, avatarContainer, userApi, spinnerVisible, popupEditClose) {
     this.userApi = userApi;
     this.popupEditClose = popupEditClose;

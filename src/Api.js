@@ -1,10 +1,4 @@
-/*
-  Можно лучше: для ендпоинта карточек сделать отдельный класс Api где будут
-  прописаный ендпоинты запросов, т.к. по заданию можно так же рализовать
-  лайки и удаление карточек
-*/
-
-class Api {
+export default class Api {
   constructor(data) {
     this.url = data.baseUrl;
     this.headers = data.headers;
