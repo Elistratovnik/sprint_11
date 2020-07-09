@@ -1,3 +1,7 @@
+import './pages/index.css'
+
+console.log('test2');
+
 // (function () {
 //   const cardApi = new Api ({
 //     baseUrl: 'https://praktikum.tk/cohort11/cards',
@@ -90,6 +94,4 @@
 //   placesList.render();
 // })();
 
-import './pages/index.css'
 
-console.log('test');
