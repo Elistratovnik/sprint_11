@@ -1,7 +1,6 @@
 export default class UserInfo {
-  constructor(nameContainer, aboutContainer, inputName, inputAbout, avatarContainer, userApi, spinnerVisible, popupEditClose) {
+  constructor(nameContainer, aboutContainer, inputName, inputAbout, avatarContainer, userApi, spinnerVisible) {
     this.userApi = userApi;
-    this.popupEditClose = popupEditClose;
     this.spinnerVisible = spinnerVisible;
     this.nameContainer = nameContainer;
     this.aboutContainer = aboutContainer;
@@ -18,6 +17,7 @@ export default class UserInfo {
         this.about = res.about;
         this.avatar = res.avatar;
         this.updateUserInfo();
+        this.setFormUserData();
       })
       .catch((err) => {
         console.log(err);
@@ -31,7 +31,6 @@ export default class UserInfo {
         this.name = newName;
         this.about = newAbout;
         this.updateUserInfo();
-        this.popupEditClose();
       })
       .catch((err) => {
         console.log(err);

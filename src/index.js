@@ -3,7 +3,6 @@ import Api from './Api';
 import ApiUser from './ApiUser';
 import Spinner from './Spinner';
 import FormValidator from './FormValidator';
-import Popup from './Popup';
 import PopupForm from './PopupForm';
 import PopupFormEdit from './PopupFormEdit';
 import PopupImg from './PopupImg';
@@ -42,6 +41,8 @@ import CardList from './CardList';
   const editFormValidator = new FormValidator(formEdit, errorMessages);
   const avaFormValidator = new FormValidator(formAva, errorMessages);
 
+  const userInfo = new UserInfo(document.querySelector('.user-info__name'), document.querySelector('.user-info__job'), formEdit.elements.userName, formEdit.elements.about, avatar, userApi, spinner.spinnerVisible);
+
   const openAddFormButton = document.querySelector('.user-info__button');
   const closeAddFormButton = document.querySelector('.popup__close_add');
   const popupAdd = new PopupForm(document.querySelector('.popup_add'), closeAddFormButton, openAddFormButton, addFormValidator.resetError, addFormValidator.resetInput, addFormValidator.setSubmitButtonState);
@@ -51,12 +52,10 @@ import CardList from './CardList';
 
   const openEditFormButton = document.querySelector('.button_edit');
   const closeEditFormButton = document.querySelector('.popup__close_edit');
-  const popupEdit = new PopupFormEdit(document.querySelector('.popup_edit'), closeEditFormButton, openEditFormButton, editFormValidator.resetError, editFormValidator.resetInput, editFormValidator.setSubmitButtonState);
+  const popupEdit = new PopupFormEdit(document.querySelector('.popup_edit'), closeEditFormButton, openEditFormButton, editFormValidator.resetError, editFormValidator.resetInput, editFormValidator.setSubmitButtonState, userInfo.setFormUserData);
 
   const closeImgbutton = document.querySelector('.popup__close_img');
   const popupImg = new PopupImg(document.querySelector('.popup_img-container'), closeImgbutton);
-
-  const userInfo = new UserInfo(document.querySelector('.user-info__name'), document.querySelector('.user-info__job'), formEdit.elements.userName, formEdit.elements.about, avatar, userApi, spinner.spinnerVisible, popupEdit.close);
 
   const cardTemplate = document.querySelector('#card').content;
   const createCardItem = (...arg) => new Card(...arg);
@@ -76,6 +75,7 @@ import CardList from './CardList';
   function editName(event) {
     event.preventDefault();
     userInfo.setUserInfo(formEdit.elements.userName.value, formEdit.elements.about.value);
+    popupEdit.close();
   }
 
   function updateAvatar(event) {
