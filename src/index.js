@@ -11,15 +11,16 @@ import Card from './Card';
 import CardList from './CardList';
 
 (function () {
+  const serverUrl =  NODE_ENV === 'development' ? 'http://' : 'https://';
   const cardApi = new Api ({
-    baseUrl: 'https://praktikum.tk/cohort11/cards',
+    baseUrl: serverUrl + 'praktikum.tk/cohort11/cards',
     headers: {
       authorization: '7420c4f4-1dc1-4739-8493-b258cc0d7abf'
     }
   });
 
   const userApi = new ApiUser ({
-    baseUrl: 'https://praktikum.tk/cohort11/users/me',
+    baseUrl: serverUrl + 'praktikum.tk/cohort11/users/me',
     method: 'PATCH',
     headers: {
       authorization: '7420c4f4-1dc1-4739-8493-b258cc0d7abf',
