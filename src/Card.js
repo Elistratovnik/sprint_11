@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   constructor({ name, link }, template, openBigPic) {
     this.template = template;
     this.name = name;

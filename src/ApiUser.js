@@ -1,4 +1,6 @@
-class ApiUser extends Api {
+import Api from "./Api"
+
+export default class ApiUser extends Api {
   editProfile (name, about) {
     return fetch(this.url, {
       method: 'PATCH',
