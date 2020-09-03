@@ -16,6 +16,8 @@ export default class PopupForm extends Popup {
       this.resetError();
       this.setSubmitButtonState();
     });
-    this.closeButton.addEventListener('click', () => this.resetInput())
+    this.closeButton.addEventListener('click', (event) => {
+      if (event.target.classList.contains('popup__close_add')) this.resetInput()
+    })
   }
 }

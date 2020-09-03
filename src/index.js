@@ -13,14 +13,14 @@ import CardList from './CardList';
 (function () {
   const serverUrl =  NODE_ENV === 'development' ? 'http://' : 'https://';
   const cardApi = new Api ({
-    baseUrl: serverUrl + 'praktikum.tk/cohort11/cards',
+    baseUrl: serverUrl + 'nomoreparties.co/cohort11/cards',
     headers: {
       authorization: '7420c4f4-1dc1-4739-8493-b258cc0d7abf'
     }
   });
 
   const userApi = new ApiUser ({
-    baseUrl: serverUrl + 'praktikum.tk/cohort11/users/me',
+    baseUrl: serverUrl + 'nomoreparties.co/cohort11/users/me',
     method: 'PATCH',
     headers: {
       authorization: '7420c4f4-1dc1-4739-8493-b258cc0d7abf',
