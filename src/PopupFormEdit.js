@@ -9,7 +9,6 @@ export default class PopupFormEdit extends PopupForm {
 
   setEventListenersEdit() {
     this.openButton.addEventListener('click', () => {
-      this.setSubmitButtonState();
       this.setFormUserData();
     })
   }
